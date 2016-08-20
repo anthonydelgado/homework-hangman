@@ -12,7 +12,7 @@ var gameOver = true;
 
 function getNewMovie() {
     gameOver = false;
-    var things = ['Rock', 'Paper', 'Scissor', 'Life', 'Game', 'wow', 'you', 'mail', 'drama', 'horror', 'neemo', 'simpsons', 'war', 'love', 'party'];
+    var things = ['men+in+black', 'citizen+kane', 'jungle+book', 'zootopia', 'godfather', 'kung+fu+panda', 'hunger+games', 'lego+movie', 'catch+me+if+you+can', 'Knocked+Up', 'ghostbusters', 'neemo', 'simpsons', 'the+matrix', 'star+trek', 'zodiac'];
     var thing = things[Math.floor(Math.random() * things.length)];
 
 
@@ -28,9 +28,36 @@ function getNewMovie() {
             console.log('The NEW movie to guess is ' + movieToGuess);
 
 
-            document.querySelector('#movie-plot').innerHTML = data.Plot;
+            document.querySelector('#movie-plot').innerHTML = 'Plot: ' + data.Plot;
 
-            document.querySelector('#movie-date').innerHTML = 'Released in ' + data.Year;
+            document.querySelector('#movie-date').innerHTML = 'Released: ' + data.Year;
+
+            var chipStars = '<div class="chip">';
+
+            for (var i = 0; i < data.Actors.length; i++) {
+                if (data.Actors[i].includes(",")) {
+                    chipStars = chipStars + '</div><div class="chip">';
+                } else {
+                    chipStars = chipStars + data.Actors[i];
+                }
+            }
+            chipStars = chipStars + '</div>';
+
+            document.querySelector('#movie-stars').innerHTML = 'Staring: ' + chipStars;
+
+
+            var genreStars = '<div class="chip">';
+
+            for (var i = 0; i < data.Genre.length; i++) {
+                if (data.Genre[i].includes(",")) {
+                    genreStars = genreStars + '</div><div class="chip">';
+                } else {
+                    genreStars = genreStars + data.Genre[i];
+                }
+            }
+            genreStars = genreStars + '</div>';
+            document.querySelector('#movie-genre').innerHTML = 'Genre: ' + genreStars;
+
 
             var titleSpacer = '';
 
@@ -113,7 +140,7 @@ function checkKeyup(letterPressed, movieToGuess) {
         }, function (isConfirm) {
             if (isConfirm) {
                 getNewMovie();
-            } 
+            }
         });
 
         gameOver = true;

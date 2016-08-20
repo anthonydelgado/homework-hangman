@@ -30,6 +30,7 @@
             height: 200px !important;
         }
     </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 <nav>
@@ -40,6 +41,7 @@
             </ul>
             <a href="#" class="brand-logo center">IMDB Hangman.JS </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a onclick="getNewMovie()" class="btn waves-effect waves-light ">replay</a></li>
                 <li><a class="btn waves-effect waves-light" href="https://github.com/anthonydelgado/homework-hangman" target="_blank">GitHub</a></li>
             </ul>
         </div>
@@ -55,17 +57,24 @@
     </blockquote>
 
     <div class="row">
-        <div class="col s12 m6">
+        <div class="col s12 ">
             <div class="card-panel">
                 <p class="flow-text"> <span id="movie-title">_ _ _ _ _</span></p>
             </div>
         </div>
-        <div class="col s12 m6">
+        <div class="col s12 ">
             <div class="card-panel">
-                <p class="flow-text"> <span id="movie-date"></span> : <span id="movie-plot"></span> <a onclick="getNewMovie()">Next Movie</a></p>
+                <p class="flow-text">
+                    <span id="movie-date"></span> <br>
+                    <span id="movie-stars"></span> <br>
+                    <span id="movie-genre"></span> <br>
+                    <span id="movie-plot"></span>
+
+                </p>
             </div>
         </div>
     </div>
+
 
 
 </div>
@@ -93,5 +102,6 @@
         </div>
     </div>
 </footer>
+
 </body>
 </html>
