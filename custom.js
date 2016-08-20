@@ -126,12 +126,6 @@ function checkKeyup(letterPressed, movieToGuess) {
         swal({
             title: "YOU WIN!",
             text: "Would you like to play again?",
-            imageUrl: moviePoster
-        });
-
-        swal({
-            title: "YOU WIN!",
-            text: "Would you like to play again?",
             imageUrl: moviePoster,
             showCancelButton: true,
             confirmButtonColor: "#DD6B55",
