@@ -6,6 +6,8 @@
 
     var winCount = 0;
     var movieToGuess = {};
+    // var movieToGuessHangman = {};
+    var movieToGuessLength;
 
     function getNewMovie() {
 
@@ -18,8 +20,12 @@
             async: false,
             dataType: 'json',
             success: function (data) {
-                movieToGuess = data.Title;
-                console.log('The NEW movie to guess is ' + data.Title);
+
+                movieToGuess = data.Title.toLowerCase();
+
+
+                console.log('The NEW movie to guess is ' + movieToGuess);
+
 
                 document.querySelector('#movie-plot').innerHTML = data.Plot;
 
@@ -40,6 +46,9 @@
 
                 document.querySelector('#movie-title').innerHTML = titleSpacer;
 
+                movieToGuess = movieToGuess.replace(/\s+/g, '');
+
+                movieToGuess = movieToGuess.split("");
 
             }
         });
@@ -61,7 +70,8 @@
 
         for (var i = 0; i < movieToGuess.length; i++) {
 
-            console.log(movieToGuess[i]);
+            // console.log(movieToGuess[i]);
+
             if (movieToGuess[i].toLowerCase() === letterPressed) {
 
                 console.log('The letter ' + letterPressed + ' was found in the movie title ' + movieToGuess);
@@ -70,11 +80,22 @@
 
                 scoreBoard();
 
+                var index = movieToGuess.indexOf(letterPressed);
+                // Note: browser support for indexOf is limited; it is not supported in Internet Explorer 7 and 8.
+                //
+                // Then remove it with splice:
+
+                if (index > -1) {
+                    movieToGuess = movieToGuess.splice(index, 1);
+                    console.log(movieToGuess);
+                    console.log('the index is ' + index)
+                } else {
+                    // sweetAlert('YOU WIN!');
+                    // alert('winner');
+                }
             }
         }
 
-
-        // document.querySelector('#movie-title').innerHTML = titleSpacer;
 
     }
 
