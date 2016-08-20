@@ -1,0 +1,14 @@
+{
+  "name": "homework-hangman",
+  "homepage": "https://github.com/anthonydelgado/homework-hangman",
+  "description": "homework for RCB",
+  "main": "index.html",
+  "keywords": [
+    "hangman"
+  ],
+  "authors": [
+    "anthony delgado <me@anthonydelgado.me>"
+  ],
+  "license": "MIT",
+  "private": true
+}

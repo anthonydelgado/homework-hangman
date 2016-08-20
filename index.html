@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IMDB Hangman JS Game</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <script src="custom.js"></script>
+    <style>
+        #movie-title span {
+            opacity: 1;
+            transition: all .5s;
+        }
+        #movie-title span.opacity {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body onload="getNewMovie()">
+<nav>
+    <div class="container">
+        <div class="nav-wrapper">
+            <ul class="left">
+                <li>CASH $<span id="score-board"></span>00</li>
+            </ul>
+            <a href="#" class="brand-logo center">IMDB Hangman.JS </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a class="btn waves-effect waves-light" href="https://github.com/anthonydelgado/homework-hangman" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+<h4>Name that movie!</h4>
+
+    <blockquote>
+        Read the plot below and then type in the movie title. You will get $100 for each correct letter!
+    </blockquote>
+
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card-panel">
+                <p class="flow-text"> <span id="movie-title">_ _ _ _ _</span></p>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card-panel">
+                <p class="flow-text"> <span id="movie-date"></span> : <span id="movie-plot"></span> <a onclick="getNewMovie()">Next Moive</a></p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">IMDB Hangman.JS</h5>
+                <p class="grey-text text-lighten-4">This example of a Hangman javascript game was built while attending Rutgers Coding Bootcamp!</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Follow me</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/anthonydelgado">GitHub</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/anthony-delgado">Linkedin</a></li>
+                    <li><a class="grey-text text-lighten-3" href="http://anthonydelgado.me/">Website</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2016 Anthony Delgado
+            <a class="grey-text text-lighten-4 right" href="http://anthonydelgado.me/">Check out my Portfolio!</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
