@@ -4,7 +4,7 @@
  */
 
 
-    var winCount = 0; 
+    var winCount = 0;
     var movieToGuess = {};
 
     function getNewMovie() {

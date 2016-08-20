@@ -1,0 +1,11 @@
+{
+  "name": "anthonydelgado/homework-hangman",
+  "description": "hangman JS game",
+  "authors": [
+    {
+      "name": "anthony delgado",
+      "email": "me@anthonydelgado.me"
+    }
+  ],
+  "require": {}
+}
