@@ -45,7 +45,6 @@
         });
     }
 
-    getNewMovie();
 
     function scoreBoard() {
 
@@ -90,3 +89,7 @@
 
     }
 
+
+$( document ).ready(function() {
+    getNewMovie();
+});
