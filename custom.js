@@ -82,6 +82,27 @@ function getNewMovie() {
     });
 }
 
+function randomWrongGif() {
+
+    var x = Math.floor((Math.random() * 10) + 1);
+
+    swal({
+        title: "Wrong Letter",
+        text: "Would you like to keep playing?",
+        imageUrl: 'images/wrong' + x + '.gif',
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes, keep playing!",
+        cancelButtonText: "No, try a new movie!"
+    }, function (isConfirm) {
+        if (isConfirm) {
+
+        }else{
+            getNewMovie();
+        }
+    });
+
+}
 
 function scoreBoard() {
 
@@ -107,6 +128,8 @@ function checkKeyup(letterPressed, movieToGuess) {
             scoreBoard();
             movieToGuess.splice(i, 1);
 
+        }else{
+            randomWrongGif();
         }
     }
 
