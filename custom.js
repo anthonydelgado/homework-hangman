@@ -11,7 +11,7 @@ var moviePoster;
 var gameOver = true;
 
 function getNewMovie() {
-    gameOver = false;
+
     var things = ['men+in+black', 'citizen+kane', 'jungle+book', 'zootopia', 'godfather', 'kung+fu+panda', 'hunger+games', 'lego+movie', 'catch+me+if+you+can', 'Knocked+Up', 'ghostbusters', 'neemo', 'simpsons', 'the+matrix', 'star+trek', 'zodiac'];
     var thing = things[Math.floor(Math.random() * things.length)];
 
@@ -80,6 +80,11 @@ function getNewMovie() {
 
         }
     });
+
+
+
+    gameOver = false;
+
 }
 
 function randomWrongGif() {
@@ -129,7 +134,7 @@ function checkKeyup(letterPressed, movieToGuess) {
             movieToGuess.splice(i, 1);
 
         }else{
-            randomWrongGif();
+            // randomWrongGif();
         }
     }
 
